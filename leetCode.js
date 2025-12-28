@@ -1,4 +1,29 @@
 
+
+// https://leetcode.com/problems/group-anagrams/description/
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+var groupAnagrams = function(strs) {
+    const map = {};
+
+    for (let word of strs) {
+        const key = word.split('').sort().join('');
+
+        // step 2: if key doesn't exist, create it
+        if (!map[key]) {
+            map[key] = [];
+        }
+
+        // step 3: push the word into its group
+        map[key].push(word);
+    }
+
+    // step 4: return only the grouped values
+    return Object.values(map);
+};
+
 //--------
 var merge = function(nums1, m, nums2, n) {
     // Remove the zeros from nums1 
