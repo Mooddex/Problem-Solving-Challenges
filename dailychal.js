@@ -1,4 +1,8 @@
 
+//------
+hasDuplicate(nums) {
+      return new Set(nums).size !== nums.length
+    }
 //----------------
 function bingo(ticket, win) {
   let miniWins = 0;
